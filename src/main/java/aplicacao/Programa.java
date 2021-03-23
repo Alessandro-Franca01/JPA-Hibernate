@@ -21,14 +21,18 @@ public class Programa {
 		// Criando os objetos para ter acesso ao banco
 		EntityManagerFactory emf = 	Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
-		// Metodo para iniciar essa operação ao banco
+		
+		// Metodo para iniciar essa operação ao banco	
 		em.getTransaction().begin();
+		
 		// Salvando a pessoa no banco de dados
 		em.persist(pessoa1);
 		em.persist(pessoa2);
 		em.persist(pessoa3);
+		
 		// Metodo para finalizar a operação
 		em.getTransaction().commit();
+		
 		// Fechando conexão
 		em.close();
 		emf.close();
